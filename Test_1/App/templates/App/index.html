@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/App/templates/App/style.css">
     <meta charset="UTF-8">
     <title>Calculate Project</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'App/css/index.css' %}">
 </head>
 <body>
     <div class="wrap">
-        <form action='value' method="post">
+        <form action={% url 'calculate' %} method="post">
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Submit">
         </form>
     </div>
+    <div class="links">
+        <a href="/result">Operations history</a>
+    </div>
+
 </body>
 </html>

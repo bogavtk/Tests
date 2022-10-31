@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import find_value
+from .views import calculate, history_objects
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('value', find_value, name='value')
+    path('calculate', calculate, name='calculate'),
+    path('result', history_objects, name='result'),
 ]

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'App/css/obj.css' %}">
+</head>
+<body>
+    <div class="result">
+        <table>
+            <tr><th>Value 1</th><th>Operator</th><th>Value 2</th><th>Result</th></tr>
+        </table>
+
+        {%for object in storage%}
+            <table class="result-item">
+                <tr>
+                    <td>{{object.val1}}</td>
+                    <td>{{object.operator}}</td>
+                    <td>{{object.val2}}</td>
+                    <td>{{object.result}}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    </div>
+    <div class="links">
+        <a href="/calculate">Calculator</a>
+    </div>
+
+    <div class="secret">
+        <a target="_blank" href="https://vk.com/marines_top_1">Click on me!</a>
+    </div>
+
+</body>
+</html>

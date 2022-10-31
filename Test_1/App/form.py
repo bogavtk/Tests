@@ -3,9 +3,9 @@ from .models import Calc_History
 
 
 class AppForm(forms.ModelForm):
-    val1 = forms.IntegerField()
-    val2 = forms.IntegerField()
-    operator = forms.CharField(max_length=10)
+    def save(self, *args, **kwargs):
+        self.instance.result = self.initial['result']
+        return super(AppForm, self).save(*args, **kwargs)
 
     class Meta:
         model = Calc_History
